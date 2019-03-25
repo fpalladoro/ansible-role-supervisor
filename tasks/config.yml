@@ -27,8 +27,8 @@
   template:
     src=etc/supervisor/conf.d/service.conf.j2
     dest="{{supervisor_services_dir}}/{{item.key}}.conf"
-    owner="{{item.value.user|default('root')}}"
-    group="{{item.value.user|default('root')}}"
+    owner="root"
+    group="root"
     mode="0640"
   with_dict: "{{supervisor_services}}"
   notify: supervisor restart
